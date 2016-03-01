@@ -1,0 +1,20 @@
+<div class="edit note my-repeat-animation" ng-repeat="note in notesCtrl.notes track by $index">
+    <div class="caption">
+        <button ng-click="notesCtrl.remove(note)" type="button" class="top-right-corner">
+            <span class="glyphicon glyphicon-remove"></span>
+        </button>
+        <div><input ng-model="note.title" type="text" class="medium" placeholder="Note Title"></div>
+        <div><textarea ng-model="note.content" autosize placeholder="Note content"></textarea></div>
+    </div>
+</div>
+<div class="create note">
+    <div class="caption">
+        <form name="noteForm">
+            <fieldset>
+                <div><input ng-model="notesCtrl.note.title" type="text" class="medium" placeholder="Note Title" /></div>
+                <div><textarea ng-model="notesCtrl.note.content" autosize placeholder="Note content"></textarea></div>
+                <button ng-click="notesCtrl.add(notesCtrl.note, noteForm)" type="submit" class="bottom-right-corner"><span class="glyphicon glyphicon-plus"></span></button>
+            </fieldset>
+        </form>
+    </div>
+</div>
