@@ -20,13 +20,15 @@
             }, []);
         };
         boardsService.getBoards = function getBoards () {
-            $log.debug(boards);
-
             return boards;
         };
 
         boardsService.getByIndex = function getByIndex (index) {
             return boards[index];
+        };
+
+        boardsService.getBoardNotes = function getBoardNotes(index){
+            return boards[index].notes;
         };
 
         boardsService.addNote = function addNote (index, note) {
