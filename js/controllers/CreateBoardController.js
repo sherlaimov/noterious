@@ -16,6 +16,7 @@
         vm.board = angular.copy(vm.defaults);
 
         vm.add = function add(board, boardForm) {
+            console.log(board);
             vm.defaults.id ++;
             BoardsService.add(board);
             _reset(boardForm);
@@ -24,7 +25,6 @@
 
         function _reset(form) {
             //$log.debug(form);
-
             if (form) {
                 form.$setPristine();
                 form.$setUntouched();

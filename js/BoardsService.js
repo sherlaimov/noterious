@@ -9,7 +9,7 @@
         boardsService.add = function add (board) {
             //board.id ++;
             boards.push(board);
-
+            console.log(boards);
         };
         boardsService.remove = function remove (board) {
             boards = boards.reduce( function(result, item) {

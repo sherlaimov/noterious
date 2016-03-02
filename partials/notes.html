@@ -7,13 +7,13 @@
         <div><textarea ng-model="note.content" autosize placeholder="Note content"></textarea></div>
     </div>
 </div>
-<div class="create note">
+<div class="create note" ng-controller="CreateNoteCtrl as createNoteCtrl">
     <div class="caption">
         <form name="noteForm">
             <fieldset>
-                <div><input ng-model="notesCtrl.note.title" type="text" class="medium" placeholder="Note Title" /></div>
-                <div><textarea ng-model="notesCtrl.note.content" autosize placeholder="Note content"></textarea></div>
-                <button ng-click="notesCtrl.add(notesCtrl.note, noteForm)" type="submit" class="bottom-right-corner"><span class="glyphicon glyphicon-plus"></span></button>
+                <div><input ng-model="createNoteCtrl.note.title" type="text" class="medium" placeholder="Note Title" /></div>
+                <div><textarea ng-model="createNoteCtrl.note.content" autosize placeholder="Note content"></textarea></div>
+                <button ng-click="createNoteCtrl.add(createNoteCtrl.note, noteForm)" type="submit" class="bottom-right-corner"><span class="glyphicon glyphicon-plus"></span></button>
             </fieldset>
         </form>
     </div>
