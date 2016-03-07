@@ -1,23 +1,24 @@
-(function(){
+(function () {
     angular.module('noteriousApp')
         .controller('CreateBoardController', CreateBoardController);
 
-    function CreateBoardController(BoardsService, $log){
+    function CreateBoardController(BoardsService, $log) {
         $log.debug('Runs CreateBoardController');
         var vm = this;
-            vm.defaults = {
-                title: '',
-                description: '',
-                isPublic: false,
-                notes: [],
-                id: 0
-            };
+        vm.defaults = {
+            title: '',
+            author: '',
+            description: '',
+            isPublic: false,
+            notes: [],
+            id: 0
+        };
 
         vm.board = angular.copy(vm.defaults);
 
         vm.add = function add(board, boardForm) {
             console.log(board);
-            vm.defaults.id ++;
+            vm.defaults.id++;
             BoardsService.add(board);
             _reset(boardForm);
 
